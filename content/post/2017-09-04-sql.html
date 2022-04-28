@@ -1,0 +1,56 @@
+---
+title: "learning SQL"
+author: "tc"
+date: '2017-09-04'
+slug: sql
+tags: 
+  - sql
+categories: 
+  - sql
+---
+
+
+
+<div id="learning-sql-ftw" class="section level2">
+<h2>Learning SQL FTW</h2>
+<p>I’ve been handling my data in R solely. Since sql is highly recommended by experts I followed on twitter, I think it’s worth a shot.</p>
+<p>So I went to datacamp and started the intro tutorial and finished in about 4 hrs.</p>
+<hr />
+</div>
+<div id="notes" class="section level2">
+<h2>Notes</h2>
+<p>After learning about the basic grammars. It seems that dplyr offers all the features for data manipulation.</p>
+<p>Here is what I learned:</p>
+<ul>
+<li>A database is a list of data.frames<br />
+</li>
+<li>basic usage
+<ul>
+<li>construct a query to the database<br />
+</li>
+<li>return as a data.frame<br />
+</li>
+<li>manipulations equivalent to dplyr functions:
+<ul>
+<li><code>SELECT XXX from YYY</code> = <code>YYY %&gt;% select(XXX)</code><br />
+</li>
+<li><code>WHERE condition</code> = <code>%&gt;% filter(condition)</code><br />
+</li>
+<li><code>SELECT operation(XXX) FROM YYY GROUP BY ZZZ</code> = <code>YYY %&gt;% group_by(ZZZ) %&gt;% summarise(operation(XXX))</code><br />
+</li>
+<li><code>SELECT op(XXX) AS NNN</code> = <code>mutate(NNN = op(XXX))</code></li>
+</ul></li>
+</ul></li>
+<li>strangely the tutorial in datacamp put join in another full tutorial… don’t know why.</li>
+</ul>
+<p>The full grammar is sth like this: pretty simple and straightforward</p>
+<pre><code>SELECT column
+FROM table
+WHERE condition
+GROUP BY group condition
+HAVING grouped condition</code></pre>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p>At least next time I saw some sql query, I could understand what’s going on.</p>
+</div>

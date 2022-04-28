@@ -1,0 +1,139 @@
+---
+title: Configuring blog test
+author: tc
+date: '2017-07-26'
+slug: configuring-blog-test
+categories:
+  - trivial
+tags:
+  - blogdown
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+draft: true
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#add-toc"><span class="toc-section-number">1</span> Add TOC</a><ul>
+<li><a href="#title1"><span class="toc-section-number">1.1</span> title1</a><ul>
+<li><a href="#title-1.1"><span class="toc-section-number">1.1.1</span> title 1.1</a></li>
+</ul></li>
+<li><a href="#title2"><span class="toc-section-number">1.2</span> title2</a><ul>
+<li><a href="#title-2.1"><span class="toc-section-number">1.2.1</span> title 2.1</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#enable-disqus"><span class="toc-section-number">2</span> enable disqus</a><ul>
+<li><a href="#update-2018-07-24-124346"><span class="toc-section-number">2.1</span> update 2018-07-24 12:43:46</a></li>
+<li><a href="#update-2018-07-24-124346-1"><span class="toc-section-number">2.2</span> update 2018-07-24 12:43:46</a></li>
+<li><a href="#update-2018-07-24-124346-finally"><span class="toc-section-number">2.3</span> update 2018-07-24 12:43:46 Finally!!!</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="add-toc" class="section level1">
+<h1><span class="header-section-number">1</span> Add TOC</h1>
+<hr />
+<div id="title1" class="section level2">
+<h2><span class="header-section-number">1.1</span> title1</h2>
+<div id="title-1.1" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> title 1.1</h3>
+</div>
+</div>
+<div id="title2" class="section level2">
+<h2><span class="header-section-number">1.2</span> title2</h2>
+<div id="title-2.1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> title 2.1</h3>
+<div id="title-2.1.1" class="section level4">
+<h4><span class="header-section-number">1.2.1.1</span> title 2.1.1</h4>
+<hr />
+<p>code for toc and titles is in plain markdown:</p>
+<pre><code>YAML:
+
+---
+title: Configuring blog test
+author: tc
+date: &#39;2017-07-26&#39;
+slug: configuring-blog-test
+categories:
+  - trivial
+tags:
+  - blogdown
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+markdown style title:
+
+## title1
+
+### title 1.1
+
+## title2
+
+### title 2.1
+
+#### title 2.1.1</code></pre>
+<hr />
+</div>
+</div>
+</div>
+</div>
+<div id="enable-disqus" class="section level1">
+<h1><span class="header-section-number">2</span> enable disqus</h1>
+<p><a href="https://github.com/yihui/hugo-xmin/pull/4">Following this PR</a></p>
+<ul>
+<li><p>Well, it seems that editing things in the /themes/hugo-xmin/exampleSite/ doesn’t work</p></li>
+<li><p>ok i find it, config.toml is in the home dir /blogsite/config.toml</p></li>
+<li><p>edited <code>config.toml</code> and <code>layouts/partials/foot_custom.html</code> as in PR:</p></li>
+</ul>
+<blockquote>
+<p>We were unable to load Disqus. If you are a moderator please see our troubleshooting guide.</p>
+</blockquote>
+<ul>
+<li>follow the <a href="https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22">troubleshooting guide</a>:
+- add <code>netlify.com</code> in the trusted domain doesn’t work<br />
+- double check shortname: correct in config.toml<br />
+- “recent webhost or domain name change”? no.<br />
+- “timeout” : unclear<br />
+- HTTP status error: unclear<br />
+- non-ASCII characters: not any<br />
+- incorrectly formatted javascript variables: unclear, used _internal</li>
+</ul>
+<div id="update-2018-07-24-124346" class="section level2">
+<h2><span class="header-section-number">2.1</span> update 2018-07-24 12:43:46</h2>
+<p>It is somehow working, but I don’t know why because of limited knowledge in the hugo frame work (and overall website setups)</p>
+<ul>
+<li>Here is what I’ve tried, one of them might work:
+<ul>
+<li>add “rbind.io” in trusted domain in disqus</li>
+<li>use <code>HUGO_VERSION 0.25.1</code> in netlify deploying specification (previous: 0.24.1 and local:0.20.1 seems to be outdated)</li>
+<li>strictly follow <a href="https://github.com/yihui/hugo-xmin/pull/4">this PR</a></li>
+</ul></li>
+</ul>
+<p>Next step is to make blogtest2 working, which is <a href="http://testtc.netlify.com/">here</a></p>
+</div>
+<div id="update-2018-07-24-124346-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> update 2018-07-24 12:43:46</h2>
+<p>playing with the testblog</p>
+<p>Here is what I found:</p>
+<p>two disqus names:
+a. tcblogsitetest<br />
+a. tc_testit</p>
+<p>two blogsites:
+1. <a href="http://testtc.netlify.com/" class="uri">http://testtc.netlify.com/</a>
+1. <a href="http://tc.rbind.io/" class="uri">http://tc.rbind.io/</a></p>
+<p>test:
+- a + 1, a + 2, working
+- b + 1, b + 2, notworking
+- settings of a,b: besides shortname, there is no difference: they set netlify.com and rbind.io to trusted domain in advanced search.</p>
+<p>A preliminary conclusion is that problem is in disqus set up, not hugo (or blogdown).</p>
+</div>
+<div id="update-2018-07-24-124346-finally" class="section level2">
+<h2><span class="header-section-number">2.3</span> update 2018-07-24 12:43:46 Finally!!!</h2>
+<p>It is working for both disqus shortnames, great.</p>
+</div>
+</div>

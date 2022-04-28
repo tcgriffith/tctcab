@@ -1,0 +1,33 @@
+---
+title: Personal tricks in R
+author: TC
+date: '2017-05-15'
+slug: tricks-for-r
+categories:
+  - r
+tags:
+  - notes
+---
+
+
+
+<blockquote>
+<p>Live Dangerously.</p>
+</blockquote>
+<div id="problem" class="section level2">
+<h2>Problem</h2>
+<p>I ran into a strange problem today. From a deep buried memory I remember that R supports import from compressed gzip files.</p>
+<p>So I compressed a tab file(MAF file, ~ 1.5G ) and tried to read it using <code>fread</code> and <code>read.table</code>.</p>
+<ul>
+<li><p><code>fread</code> failed.</p></li>
+<li><p><code>read.table</code> succeeded, but only half of the rows are read in.
+What’s worse, when tried to generate a table using <code>table(df$XXX)</code>, the R session ate up all my memory and crushed.</p></li>
+</ul>
+<p>And it turns out to be a missing option <code>quote=&quot;\&quot;&quot;</code> in the command <code>read.table</code>.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary:</h2>
+<p><code>fread</code> from <code>data.table</code> doesn’t support compressed files yet. But It’s super smart to figure all annoying I/O problems in R.</p>
+<p>And it’s <a href="http://stackoverflow.com/questions/1727772/quickly-reading-very-large-tables-as-dataframes-in-r">superfast</a>.</p>
+<p>The vanilla <code>read.table</code> requires carefully configured options. A day ruiner if you didn’t pay enough attention.</p>
+</div>

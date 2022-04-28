@@ -1,0 +1,16 @@
+---
+title: "My first post"
+author: "TC"
+date: '2017-04-27'
+slug: my-first-post
+tags: 
+  - trivial
+categories: 
+  - trivial
+draft: true
+---
+
+I like this quote:
+
+> I web, therefore I am ~~Spiderman~~
+
