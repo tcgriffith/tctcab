@@ -10,7 +10,7 @@ const ctx = canvas.getContext('2d');
 if (window.devicePixelRatio > 1) {
   canvas.width = canvas.clientWidth * 2;
   canvas.height = canvas.clientHeight * 2;
-  ctx.scale(2, 2);
+  ctx.scale(4, 4);
 }
 
 /* ====================== */
@@ -26,12 +26,12 @@ let dots = []; // Every dots in an array
 /* ====================== */
 /* Some of those constants may change if the user resizes their screen but I still strongly believe they belong to the Constants part of the variables */
 const DOTS_AMOUNT = 100; // Amount of dots on the screen
-const DOT_RADIUS = 4; // Radius of the dots
-let GLOBE_RADIUS = width * 0.7; // Radius of the globe
+const DOT_RADIUS = 6; // Radius of the dots
+let GLOBE_RADIUS = width * .8; // Radius of the globe
 let GLOBE_CENTER_Z = -GLOBE_RADIUS; // Z value of the globe center
 let PROJECTION_CENTER_X = width / 2; // X center of the canvas HTML
 let PROJECTION_CENTER_Y = height / 2; // Y center of the canvas HTML
-let FIELD_OF_VIEW = width * 0.8;
+let FIELD_OF_VIEW = width * .7;
 
 class Dot {
   constructor(x, y, z) {
@@ -87,7 +87,7 @@ function render(a) {
   ctx.clearRect(0, 0, width, height);
   
   // Increase the globe rotation
-  rotation = a * 0.0001;
+  rotation = a * 0.00005;
   
   const sineRotation = Math.sin(rotation); // Sine of the rotation
   const cosineRotation = Math.cos(rotation); // Cosine of the rotation
