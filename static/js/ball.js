@@ -41,7 +41,7 @@ class Dot {
     
     this.xProject = 0;
     this.yProject = 0;
-    this.sizeProjection = 1;
+    this.sizeProjection = 50;
   }
   // Do some math to project the 3D position into the 2D canvas
   project(sin, cos) {
