@@ -11,3 +11,7 @@ title: 收藏
 - [电场](https://codepen.io/EpicCoder_2002/pen/KERjgm)
 
 - [纯CSS卡布奇诺](https://codepen.io/yuanchuan/pen/JjRpYVo)
+
+- [WARP](https://codepen.io/al-ro/pen/oRZLbd)
+
+- [crowd simulation](https://codepen.io/zadvorsky/pen/xxwbBQV)
