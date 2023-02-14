@@ -59,7 +59,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: TCTCAB
-    subtitle: "人生は美しい"
+    subtitle: "让TC保持不打原神 果然是一种奢望"
     imageUrl: "/portrait01.jpeg"
     imageWidth: 160
     imageHeight: 160
@@ -141,3 +141,25 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+    - ^dart-sass-embedded$
+    - ^go$
+    - ^npx$
+    - ^postcss$
+    osEnv:
+    - (?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+)$
+  funcs:
+    getenv:
+    - ^HUGO_
+    - ^CI$
+    - ^BLOGDOWN
+  http:
+    methods:
+    - (?i)GET|POST
+    urls:
+    - .*
