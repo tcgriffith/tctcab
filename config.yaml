@@ -1,5 +1,5 @@
 baseURL: "/"
-title: tctcab
+title: tc&xy
 paginate: 10
 theme: PaperModcustom
 
@@ -58,8 +58,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: TCTCAB
-    subtitle: "让TC保持不打原神 果然是一种奢望"
+    title: tc和xy
+    subtitle: "啊~~"
     imageUrl: "/portrait01.jpeg"
     imageWidth: 160
     imageHeight: 160
