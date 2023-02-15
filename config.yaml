@@ -51,7 +51,7 @@ params:
     # safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "tc的主页"
+    text: "xytc的小站"
     icon: /portrait01.jpeg
     iconHeight: 35
 
@@ -60,7 +60,7 @@ params:
     enabled: true # needs to be explicitly set
     title: tc和xy
     subtitle: "啊~~"
-    imageUrl: "/portrait01.jpeg"
+    imageUrl: "/portrait3.jpg"
     imageWidth: 160
     imageHeight: 160
     imageTitle: my portrait

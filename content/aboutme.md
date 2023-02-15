@@ -4,6 +4,8 @@ author: TC
 hidemeta: true
 ---
 
+![](/portrait2.png)
+
 PhD ~~student~~ in bioinfo.
 
 我喜欢吃海鲜比如皮皮虾
